@@ -1,8 +1,20 @@
 #include "RGBTile.h"
 #include "bitlash.h"
 
+// global used by most functions
 RGBTile myTile;
 
+/*******************************************************************************
+* bitlash functions
+*/
+numvar bitlash_twinkle() {
+    myTile.twinkle();
+    return (numvar) 0;
+}
+
+/*******************************************************************************
+* arduino
+*/
 void setup() {
     // setup RGBTile
     myTile = RGBTile();
@@ -17,6 +29,7 @@ void setup() {
 
     // setup bitlash
     initBitlash(57600);
+    addBitlashFunction("twinkle", (bitlash_function) bitlash_twinkle);
 }
 
 void loop() {
