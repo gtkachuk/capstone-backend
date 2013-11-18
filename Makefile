@@ -2,7 +2,7 @@
 # Arduino project settings. 
 #
 ARDUINO_DIR             = /usr/share/arduino
-TARGET                  = project
+TARGET                  = backend
 ARDUINO_LIBS            = SPI
 BOARD_TAG               = uno
 ARDUINO_PORT            = /dev/ttyACM0
