@@ -17,10 +17,22 @@ numvar bitlash_colorPixel() {
         myTile.colorPixel(getarg(1), getarg(2), getarg(3),
                           getarg(4), getarg(5));
         return (numvar) 0;
-    } else {
-        // do nothing if arg count incorrect
-        return (numvar) 1;
     }
+    // do nothing if arg count incorrect
+    return (numvar) 1;
+}
+
+numvar bitlash_drawPixel() {
+    if(getarg(0) == 2) {
+        myTile.drawPixel(getarg(1), getarg(2));
+        return (numvar) 0;
+    }
+    return (numvar) 1;
+}
+
+numvar bitlash_drawAll() {
+    myTile.drawAll();
+    return (numvar) 0;
 }
 
 /*******************************************************************************
@@ -43,6 +55,8 @@ void setup() {
     addBitlashFunction("twinkle", (bitlash_function) bitlash_twinkle);
     // all new function names MUST be lower case
     addBitlashFunction("color_pixel", (bitlash_function) bitlash_colorPixel);
+    addBitlashFunction("draw_pixel", (bitlash_function) bitlash_drawPixel);
+    addBitlashFunction("draw_all", (bitlash_function) bitlash_drawAll);
 }
 
 void loop() {
