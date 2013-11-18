@@ -1,4 +1,7 @@
 *.zip
 *.tar.gz
 *.swp
+build-cli
+*.tar.gz
+*.zip
 

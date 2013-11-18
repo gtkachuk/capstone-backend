@@ -1,4 +1,4 @@
-#include "RGBTile/RGBTile.h"
+#include "RGBTile.h"
 
 RGBTile myTile;
 
@@ -13,6 +13,8 @@ void setup() {
         }
     }
 
+    myTile.drawAll();
+
     // setup bitlash
 
     // generated setup code goes here
@@ -21,6 +23,7 @@ void setup() {
 
 void loop() {
     // generated loop code goes here
-
+    while(1) {
+    }
 }
 
