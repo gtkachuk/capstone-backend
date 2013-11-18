@@ -13,10 +13,10 @@ include /usr/share/arduino/Arduino.mk
 ################################################################################
 # Other targets.
 #
-#SOURCES                 = project.ino RGBTile.cpp
-#VENDOR_SOURCES          = Adafruit_WS2801.cpp
-#HEADERS                 = RGBTile.h
-#VENDOR_HEADERS          = Adafruit_WS2801.h
+SOURCES                 = backend.ino RGBTile.cpp
+VENDOR_SOURCES          = Adafruit_WS2801.cpp bitlash.cpp
+HEADERS                 = RGBTile.h
+VENDOR_HEADERS          = Adafruit_WS2801.h bitlash.h
 
 #.PHONY: style
 #style: $(SOURCES) $(HEADERS)
@@ -27,5 +27,5 @@ include /usr/share/arduino/Arduino.mk
 #		$^
 #	rm -f *.orig
 
-#tags: $(SOURCES) $(VENDOR_SOURCES) $(HEADERS) $(VENDOR_HEADERS)
-#	ctags $^
+tags: $(SOURCES) $(VENDOR_SOURCES) $(HEADERS) $(VENDOR_HEADERS)
+	ctags $^
