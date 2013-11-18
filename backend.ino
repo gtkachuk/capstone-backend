@@ -12,6 +12,17 @@ numvar bitlash_twinkle() {
     return (numvar) 0;
 }
 
+numvar bitlash_colorPixel() {
+    if(getarg(0) == 5) { // number of args actually passed is 5
+        myTile.colorPixel(getarg(1), getarg(2), getarg(3),
+                          getarg(4), getarg(5));
+        return (numvar) 0;
+    } else {
+        // do nothing if arg count incorrect
+        return (numvar) 1;
+    }
+}
+
 /*******************************************************************************
 * arduino
 */
@@ -30,6 +41,8 @@ void setup() {
     // setup bitlash
     initBitlash(57600);
     addBitlashFunction("twinkle", (bitlash_function) bitlash_twinkle);
+    // all new function names MUST be lower case
+    addBitlashFunction("color_pixel", (bitlash_function) bitlash_colorPixel);
 }
 
 void loop() {
