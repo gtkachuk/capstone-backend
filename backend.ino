@@ -7,6 +7,15 @@ RGBTile myTile;
 /*******************************************************************************
 * bitlash functions
 */
+numvar bitlash_drawLetter() {
+    if(getarg(0) == 1) {
+        myTile.drawLetter(((char *) getstringarg(i))[0]);
+        return (numvar) 0;
+    }
+    // do nothing if arg count incorrect
+    return (numvar) 1;
+}
+
 numvar bitlash_twinkle() {
     myTile.twinkle();
     return (numvar) 0;
@@ -18,7 +27,6 @@ numvar bitlash_colorPixel() {
                           getarg(4), getarg(5));
         return (numvar) 0;
     }
-    // do nothing if arg count incorrect
     return (numvar) 1;
 }
 
