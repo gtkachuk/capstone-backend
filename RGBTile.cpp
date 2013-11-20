@@ -862,3 +862,8 @@ void RGBTile::colorPixel(int x, int y, byte r, byte g, byte b)
 {
   _colors[x][y] = Color(r, g, b); 
 }
+
+void RGBTile::colorPixel(int x, int y, uint32_t c) {
+  _colors[x][y] = c;
+}
+

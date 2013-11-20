@@ -25,6 +25,7 @@ class RGBTile
     void drawLetter(char l);
     void twinkle();
     void colorPixel(int i, int j, byte r, byte g, byte b);
+    void colorPixel(int x, int y, uint32_t c);
     void drawPixel(int i, int j);
     void drawPixel(int i, int j, byte r, byte g, byte b);
     void drawAll();
