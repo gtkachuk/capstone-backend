@@ -73,12 +73,18 @@ const prog_char builtin_table[] PROGMEM = {
 #endif
 
 	// Add user built-ins here.  Some examples:
-#if 0
-	BUILT_IN("low",		"return 0")
-	BUILT_IN("high",	"return 1")
-	BUILT_IN("input",	"return 0")
-	BUILT_IN("output",	"return 1")
-	BUILT_IN("digitalread",	"return dr(arg(1))")
+#if 1
+	BUILT_IN("red",		"return 16711680")
+	BUILT_IN("green",	"return 65280")
+	BUILT_IN("blue",	"return 255")
+	BUILT_IN("yellow",	"return 16776960")
+	BUILT_IN("orange",	"return 16728064")
+	BUILT_IN("off",		"return 0")
+	//BUILT_IN("low",		"return 0")
+	//BUILT_IN("high",	"return 1")
+	//BUILT_IN("input",	"return 0")
+	//BUILT_IN("output",	"return 1")
+	//BUILT_IN("digitalread",	"return dr(arg(1))")
 #endif
 
 	// This sentinel must be last	
