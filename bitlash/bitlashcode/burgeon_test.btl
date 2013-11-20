@@ -1,0 +1,18 @@
+i = 0; while (i < 5) {j = 0; while (j < 5) {pixel(i,j,red); j++}; i++}
+draw_all()
+delay(1000)
+i = 0; while (i < 5) {j = 0; while (j < 5) {pixel(i,j,green); j++}; i++}
+draw_all()
+delay(1000)
+i = 0; while (i < 5) {j = 0; while (j < 5) {pixel(i,j,blue); j++}; i++}
+draw_all()
+delay(1000)
+i = 0; while (i < 5) {j = 0; while (j < 5) {pixel(i,j,off); j++}; i++}
+draw_all()
+delay(1000)
+i = 0; while (i < 5) {j = 0; while (j < 5) {pixel(i,j,orange); j++}; i++}
+draw_all()
+delay(1000)
+i = 0; while (i < 5) {j = 0; while (j < 5) {pixel(i,j,yellow); j++}; i++}
+draw_all()
+delay(1000)

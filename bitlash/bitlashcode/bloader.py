@@ -52,7 +52,7 @@
 import serial, fdpexpect, sys, time, commands
 
 device = None
-#device = '/dev/tty.usbserial-A7006wXd'
+device = '/dev/ttyACM0'
 baud = 57600
 
 if not device:
@@ -113,8 +113,8 @@ elif (len(sys.argv) >= 2):
 
 # after the file is sent, or if there are no arguments: 
 # interactive mode, ^] to exit (like telnet)
-try:
-	c.interact()
-except:
-	pass
+#try:
+#	c.interact()
+#except:
+#	pass
 c.close()
