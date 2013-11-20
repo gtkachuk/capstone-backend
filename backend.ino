@@ -39,14 +39,6 @@ numvar bitlash_colorPixel() {
     return (numvar) 1;
 }
 
-numvar bitlash_drawPixel() {
-    if(getarg(0) == 2) {
-        myTile.drawPixel(getarg(1), getarg(2));
-        return (numvar) 0;
-    }
-    return (numvar) 1;
-}
-
 numvar bitlash_drawAll() {
     myTile.drawAll();
     return (numvar) 0;
@@ -73,8 +65,7 @@ void setup() {
     addBitlashFunction("draw_letter", (bitlash_function) bitlash_drawLetter);
     addBitlashFunction("twinkle", (bitlash_function) bitlash_twinkle);
     addBitlashFunction("color", (bitlash_function) bitlash_color);
-    addBitlashFunction("color_pixel", (bitlash_function) bitlash_colorPixel);
-    addBitlashFunction("draw_pixel", (bitlash_function) bitlash_drawPixel);
+    addBitlashFunction("pixel", (bitlash_function) bitlash_colorPixel);
     addBitlashFunction("draw_all", (bitlash_function) bitlash_drawAll);
 }
 
