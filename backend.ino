@@ -1,3 +1,4 @@
+#include <Arduino.h>
 #include "RGBTile.h"
 #include "bitlash.h"
 
@@ -8,11 +9,11 @@ RGBTile myTile;
 * bitlash functions
 */
 numvar bitlash_drawLetter() {
-    if(getarg(0) == 1) {
-        myTile.drawLetter(((char *) getstringarg(i))[0]);
+    if(getarg(0) == 1 && isstringarg(1)) {
+        myTile.drawLetter(((char *) getstringarg(1))[0]);
         return (numvar) 0;
     }
-    // do nothing if arg count incorrect
+    // do nothing if arg count incorrect or if arg 1 not a string
     return (numvar) 1;
 }
 
@@ -21,12 +22,20 @@ numvar bitlash_twinkle() {
     return (numvar) 0;
 }
 
+numvar bitlash_color() {
+    if(getarg(0) == 3) {
+        return (numvar) myTile.Color(getarg(1), getarg(2), getarg(3));
+    }
+    // if arg count incorrect return "no color" or off
+    return (numvar) 0;
+}
+
 numvar bitlash_colorPixel() {
-    if(getarg(0) == 5) { // number of args actually passed is 5
-        myTile.colorPixel(getarg(1), getarg(2), getarg(3),
-                          getarg(4), getarg(5));
+    if(getarg(0) == 3) { // number of args actually passed is 5
+        myTile.colorPixel(getarg(1), getarg(2), getarg(3));
         return (numvar) 0;
     }
+    // do nothing if arg count incorrect
     return (numvar) 1;
 }
 
@@ -60,8 +69,10 @@ void setup() {
 
     // setup bitlash
     initBitlash(57600);
-    addBitlashFunction("twinkle", (bitlash_function) bitlash_twinkle);
     // all new function names MUST be lower case
+    addBitlashFunction("draw_letter", (bitlash_function) bitlash_drawLetter);
+    addBitlashFunction("twinkle", (bitlash_function) bitlash_twinkle);
+    addBitlashFunction("color", (bitlash_function) bitlash_color);
     addBitlashFunction("color_pixel", (bitlash_function) bitlash_colorPixel);
     addBitlashFunction("draw_pixel", (bitlash_function) bitlash_drawPixel);
     addBitlashFunction("draw_all", (bitlash_function) bitlash_drawAll);

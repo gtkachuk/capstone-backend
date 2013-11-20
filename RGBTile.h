@@ -29,11 +29,11 @@ class RGBTile
     void drawPixel(int i, int j);
     void drawPixel(int i, int j, byte r, byte g, byte b);
     void drawAll();
+    uint32_t Color(byte r, byte g, byte b);
   
   private:
     Adafruit_WS2801 _strip;
     byte* getLetter(char l);
-    uint32_t Color(byte r, byte g, byte b);
     uint32_t _colors[NUM_ROWS][NUM_COLS];
   
 };
